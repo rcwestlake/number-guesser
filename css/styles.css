@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  font-family: Helvetica;
+  background-color: lightblue;
+
+}
+
+h1 {
+  font-size:5em;
+  font-weight: bold;
+  margin: 100px;
+}
+
+h3 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+#last-guess {
+  font-size: 7em;
+  margin-bottom: 0.5em;
+
+}
+
+
+#fields {
+  text-align: center;;
+}
+
+#guess {
+  margin: 30px;
+  font-size: 30px;
+  text-align: center;
+  height:40px;
+  width: 400px;
+}
+
+button {
+  height: 40px;
+  width: 110px;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: white;
+  border: 1px solid black;
+}
