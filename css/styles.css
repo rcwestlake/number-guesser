@@ -6,31 +6,32 @@ body {
 }
 
 h1 {
-  font-size:5em;
+  font-size: 50px;
   font-weight: bold;
-  margin: 100px;
+  margin: 75px;
 }
 
 h3 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 #last-guess {
-  font-size: 7em;
-  margin-bottom: 0.5em;
+  font-size: 100px;
+  margin-bottom: 15px;
 }
 
-
 #fields {
-  text-align: center;;
+  text-align: center;
 }
 
 #guess {
-  margin: 30px;
-  font-size: 30px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 40px;
   text-align: center;
-  height:40px;
+  height: 40px;
   width: 400px;
 }
 
@@ -43,4 +44,10 @@ button {
 button:hover {
   background-color: white;
   border: 1px solid black;
+}
+
+#reset-button{
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
 }
