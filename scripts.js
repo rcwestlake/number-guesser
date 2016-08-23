@@ -5,7 +5,7 @@ var randomNum = generateRandom();
 
 var min = 0;
 var max = 0;
-var test;
+var test = 2;
 
 function generateRandom() {
  return Math.floor((Math.random() * 100) + 1);
