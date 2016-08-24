@@ -7,15 +7,17 @@ var newGameButton = document.querySelector('#reset-button');
 var lastGuess = document.querySelector('#last-guess');
 var h3 = document.querySelector('h3');
 var currentMax = document.querySelector('#cur-max');
+var currentMin = document.querySelector('#cur-min');
 var minField = document.querySelector('#min');
 var maxField = document.querySelector('#max');
+var rangeButton = document.querySelector('#new-range-button');
 
 var min = 0;
 var max = 100;
-var test = 2;
+
 
 function generateRandom() {
- return Math.floor((Math.random() * max) + 1);
+ return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var answer = generateRandom();
@@ -30,6 +32,7 @@ function checkInput (number, min, max){
    alert('Please enter a number. Not a string.');
    return false;
  }
+ console.log(number)
  if ((number < min) || (number > max)) {//check if guess is within range
    alert('Please enter a number between ' + min + ' and ' + max + '.');
    return false;
@@ -81,7 +84,24 @@ guessField.onkeydown = function(e) {//run game with enter in field
    }
 };
 
-clearButton.addEventListener('click', function(){//clear input field when clear button is clicked
+if(guessField.value === '') {
+  clearButton.disabled = true;
+  guessButton.disabled = true;
+}
+
+guessField.addEventListener('keyup', function(){
+  var guessField = document.querySelector('#guess');
+  if (guessField.value !== ''){
+    clearButton.disabled = false;
+    newGameButton.disabled = false;
+    guessButton.disabled = false;
+  }else{
+    clearButton.disabled = true;
+    guessButton.disabled = true;
+  }
+});
+
+clearButton.addEventListener('click', function(){ //clear input field when clear button is clicked
   clearInput();
 });
 
@@ -92,4 +112,22 @@ newGameButton.addEventListener('click', function(){
   lastGuess.innerText = '___';
   h3.innerText = '';
   feedback.innerText = '';
+});
+
+rangeButton.addEventListener('click', function() {
+
+  if (isNaN(maxField.value) || isNaN(minField.value)){
+    alert("Please Enter A Real Number");
+  }else{
+  var maxInput = maxField.value;
+  var minInput = minField.value;
+  max = convertToInt(maxInput);
+  min = convertToInt(minInput);
+  currentMax.innerText = max;
+  currentMin.innerText = min
+  answer = generateRandom();
+  lastGuess.innerText = '___';
+  h3.innerText = '';
+  feedback.innerText = '';
+  }
 });
