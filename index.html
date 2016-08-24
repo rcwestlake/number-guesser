@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="css/styles.css" charset="utf-8">
-  <script src="scripts.js" async></script>
-  <title>Number Guesser Game</title>
-</head>
-<body>
-  <header>
-    <h1>Number Guesser Game</h1>
-  </header>
-  <h3>Your last guess was: </h3>
-  <section id="last-guess">
-    <p>99</p>
-  </section>
-  <section id="feedback">
-    <p>
-      Feedback on guess
-    </p>
-  </section>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" charset="utf-8">
+    <script src="scripts.js" async></script>
+    <title>Number Guesser Game</title>
+  </head>
+  <body>
+    <header>
+      <h1>Number Guesser Game</h1>
+    </header>
 
-  <section id="fields">
-  <input type="text" name="guess-field" maxlength="3" id="guess"><br>
 
-  <button type="button" name="guess-button">Guess</button>
-  <button type="button" name="clear-button">Clear</button><br>
-  <button type="button" name="reset-button">New Game</button>
+    <h3>Make a guess!</h3>
+    <section id="last-guess">
+      <p>____</p>
+    </section>
 
-  </section>
+    <section id="feedback">
+      <p>&nbsp;</p>
+    </section>
 
-  <input type="text" name="min" id="min">
-  <input type="text" name="max" id="max">
+    <section id="fields">
+      <input type="text" name="guess-field" placeholder="Your Guess Here" maxlength="3" id="guess">
+      <!-- <input type="text" class="guess-field js-guess-field" maxlength="3" id="guess"><br> -->
 
-</body>
+      <button type="button" id="guess-button">Guess</button>
+      <button type="button" id="clear-button">Clear</button>
+      <button type="button" id="reset-button">New Game</button>
+
+    </section>
+
+    <p id='current-range'>Current Range: </p>
+    <section id='min-max-status'>
+      <p id='cur-min'>0</p>
+      <p> - </p>
+      <p id='cur-max'>100</p>
+    </section>
+
+    <input type="text" name="min" placeholder="Min" id="min">
+    <input type="text" name="max" placeholder="Max" id="max">
+
+    <section id='range-buttons'>
+    <button type="button" id="new-range-button">Change Range</button>
+    <button type="button" id="reset-range-button">Clear</button>
+    </section>
+
+  </body>
 </html>
