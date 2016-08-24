@@ -1,7 +1,12 @@
 
 var answer = generateRandom();
 var feedback = document.querySelector('#feedback');
+var guessField = document.querySelector('#guess');
 var guessButton = document.querySelector('#guess-button');
+var clearButton = document.querySelector('#clear-button');
+var newGameButton = document.querySelector('#reset-button');
+var lastGuess = document.querySelector('#last-guess');
+var h3 = document.querySelector('h3');
 
 var min = 0;
 var max = 100;
@@ -38,8 +43,10 @@ function gameTest() {//game sequence
     return;
   }
 
-  console.log(userGuess);
-  console.log(answer);
+  lastGuess.innerText = guessInt;
+  h3.innerText =  'Your last guess was:';
+  console.log(userGuess);//test
+  console.log(answer);//test
 
   if (guessInt > answer) {
     feedback.innerText = 'Sorry, that guess is too high. Try a lower number.';
@@ -48,11 +55,43 @@ function gameTest() {//game sequence
   }
 
   if (guessInt === answer) {
-    feedback.innerText = 'Congratulations, you win';
-    alert('Congratulations, you win!');
+    feedback.innerText = 'Congratulations, you win! Click New Game to play again';
+    alert('Congratulations, you win! Click New Game to play again');
   }
 }
 
-guessButton.addEventListener('click', function(){
+function clearInput() {
+  guessField.value = '';
+}
+
+
+guessButton.addEventListener('click', function(){//run game with click on button
   gameTest();
+});
+
+guessField.onkeydown = function(e) {//run game with enter in field
+   if(e.keyCode == 13){
+     gameTest();
+   }
+};
+
+// if(guessField.value === ''){
+//   clearButton.disabled = true;
+//   newGameButton.disabled = true;
+// }
+
+clearButton.addEventListener('click', function(){//clear input field when clear button is clicked
+  clearInput();
+});
+
+//new game
+//clear input
+//generate new random number
+
+newGameButton.addEventListener('click', function(){
+  clearInput();
+  answer = generateRandom();
+  lastGuess.innerText = '___';
+  h3.innerText = '';
+  feedback.innerText = '';
 });

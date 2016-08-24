@@ -1,53 +1,77 @@
 body {
-  text-align: center;
-  font-family: Helvetica;
-  background-color: lightblue;
+ text-align: center;
+ font-family: Helvetica;
+ background-color: #f3f9fe ;
 
+}
+
+header {
+ background-color: #109af7 ;
 }
 
 h1 {
-  font-size: 50px;
-  font-weight: bold;
-  margin: 75px;
+ color: white;
+ font-size: 50px;
+ font-weight: bold;
+ padding: 75px;
 }
 
 h3 {
-  font-size: 32px;
-  margin-bottom: 20px;
+ font-size: 32px;
+ margin-bottom: 20px;
+ margin-top: 20px;
 }
 
 #last-guess {
-  font-size: 100px;
-  margin-bottom: 15px;
+ font-size: 100px;
+ margin-bottom: 15px;
 }
 
 #fields {
-  text-align: center;
+ text-align: center;
 }
 
 #guess {
-  display: block;
-  margin: auto;
-  margin-top: 20px;
-  font-size: 40px;
-  text-align: center;
-  height: 40px;
-  width: 400px;
+ display: block;
+ margin: auto;
+ margin-top: 20px;
+ font-size: 40px;
+ text-align: center;
+ height: 40px;
+ width: 475px;
+ border-radius: 30px;
+ border: 1px solid #109af7 ;
+
 }
 
 button {
-  height: 40px;
-  width: 110px;
-  margin: 20px;
+ background-color: #109af7 ;
+ color: white;
+ border: none;
+ height: 40px;
+ width: 140px;
+ margin: 20px;
+ border-radius: 30px;
 }
 
 button:hover {
-  background-color: white;
-  border: 1px solid black;
+ background-color: white;
+ border: 2px solid #109af7 ;
+ color: black;
 }
 
+button:disabled{
+  background-color: lightgray;
+  color: black;
+}
 #reset-button{
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
+ display: block;
+ margin: auto;
+ margin-bottom: 20px;
+}
+
+#min, #max {
+ border-radius: 30px;
+ border: 1px solid #109af7 ;
+ height: 25px;
 }
