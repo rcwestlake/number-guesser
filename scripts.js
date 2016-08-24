@@ -16,6 +16,9 @@ var resetRangeButton = document.querySelector('#reset-range-button');
 var min = 0;
 var max = 100;
 
+guessField.min = min;
+guessField.max = max;
+
 // initialize answer, comes after min and max are defined
 var answer = generateRandom();
 
@@ -142,6 +145,8 @@ rangeButton.addEventListener('click', function() {
     var minInput = minField.value;
     max = convertToInt(maxInput);
     min = convertToInt(minInput);
+    guessField.min = min;
+    guessField.max = max;
     currentMax.innerText = max;
     currentMin.innerText = min
     answer = generateRandom();
