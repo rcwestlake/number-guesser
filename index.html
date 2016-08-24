@@ -14,7 +14,8 @@
       <h1>Number Guesser Game</h1>
     </header>
 
-    <h3> </h3>
+
+    <h3>&nbsp;</h3>
     <section id="last-guess">
       <p>____</p>
     </section>
@@ -35,8 +36,17 @@
 
     </section>
 
-    <input type="text" name="min" id="min">
-    <input type="text" name="max" id="max">
+    <p id='current-range'>Current Range: </p>
+    <section id='min-max-status'>
+      <p id='cur-min'>0</p>
+      <p> - </p>
+      <p id='cur-max'>100</p>
+    </section>
+
+    <input type="text" name="min" placeholder="Min" id="min">
+    <input type="text" name="max" placeholder="Max" id="max">
+
+    <button type="button" id="new-range-button">Change Range</button>
 
   </body>
 </html>

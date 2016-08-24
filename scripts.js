@@ -1,5 +1,4 @@
 
-var answer = generateRandom();
 var feedback = document.querySelector('#feedback');
 var guessField = document.querySelector('#guess');
 var guessButton = document.querySelector('#guess-button');
@@ -7,21 +6,24 @@ var clearButton = document.querySelector('#clear-button');
 var newGameButton = document.querySelector('#reset-button');
 var lastGuess = document.querySelector('#last-guess');
 var h3 = document.querySelector('h3');
+var currentMax = document.querySelector('#cur-max');
+var minField = document.querySelector('#min');
+var maxField = document.querySelector('#max');
 
 var min = 0;
 var max = 100;
 var test = 2;
 
 function generateRandom() {
- return Math.floor((Math.random() * 100) + 1);
+ return Math.floor((Math.random() * max) + 1);
 }
-//test random number
-console.log(generateRandom());
+
+var answer = generateRandom();
+
 
 function convertToInt(number) {
  return parseInt(number);
 }
-console.log(convertToInt(generateRandom()));
 
 function checkInput (number, min, max){
  if (isNaN(number)) {// check if guess is a number and not a string or boolean
@@ -44,6 +46,7 @@ function gameTest() {//game sequence
   }
 
   lastGuess.innerText = guessInt;
+  clearInput();
   h3.innerText =  'Your last guess was:';
   console.log(userGuess);//test
   console.log(answer);//test
@@ -56,6 +59,9 @@ function gameTest() {//game sequence
 
   if (guessInt === answer) {
     feedback.innerText = 'Congratulations, you win! Click New Game to play again';
+    max = max + 10;
+    currentMax.innerText = max;
+    answer = generateRandom();
     alert('Congratulations, you win! Click New Game to play again');
   }
 }
@@ -75,18 +81,10 @@ guessField.onkeydown = function(e) {//run game with enter in field
    }
 };
 
-// if(guessField.value === ''){
-//   clearButton.disabled = true;
-//   newGameButton.disabled = true;
-// }
-
 clearButton.addEventListener('click', function(){//clear input field when clear button is clicked
   clearInput();
 });
 
-//new game
-//clear input
-//generate new random number
 
 newGameButton.addEventListener('click', function(){
   clearInput();

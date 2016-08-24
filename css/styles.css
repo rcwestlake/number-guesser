@@ -13,7 +13,20 @@ h1 {
  color: white;
  font-size: 50px;
  font-weight: bold;
- padding: 75px;
+ padding: 40px;
+}
+
+#current-range{
+  margin-top: 10px;
+}
+
+#min-max-status{
+  margin-top: 10px;
+}
+
+#min-max-status p{
+  display: inline-block;
+
 }
 
 h3 {
@@ -23,7 +36,7 @@ h3 {
 }
 
 #last-guess {
- font-size: 100px;
+ font-size: 80px;
  margin-bottom: 15px;
 }
 
@@ -36,12 +49,16 @@ h3 {
  margin: auto;
  margin-top: 20px;
  font-size: 40px;
- text-align: center;
  height: 40px;
  width: 475px;
  border-radius: 30px;
  border: 1px solid #109af7 ;
 
+}
+
+input{
+  outline: none;
+  text-align: center;
 }
 
 button {
@@ -52,6 +69,7 @@ button {
  width: 140px;
  margin: 20px;
  border-radius: 30px;
+ font-size: 13px;
 }
 
 button:hover {
@@ -64,14 +82,30 @@ button:disabled{
   background-color: lightgray;
   color: black;
 }
+
+button:focus{
+  outline: none;
+}
 #reset-button{
  display: block;
  margin: auto;
  margin-bottom: 20px;
 }
 
+#min-section, #max-section{
+  display: inline-block;
+  margin: 20px;
+}
+
 #min, #max {
  border-radius: 30px;
  border: 1px solid #109af7 ;
  height: 25px;
+ margin-top: 20px;
+}
+
+#new-range-button{
+  display:block;
+  margin: auto;
+  margin-top: 20px;
 }
