@@ -104,8 +104,15 @@ button:focus{
  margin-top: 20px;
 }
 
-#new-range-button{
+#range-buttons{
   display:block;
-  margin: auto;
+}
+
+#new-range-button{
+  display: inline-block;
   margin-top: 20px;
+}
+
+#reset-range-button {
+  display: inline-block;
 }
