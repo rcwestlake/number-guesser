@@ -43,7 +43,7 @@ function checkInput (number){
     alert('Please enter a number. Not a string.');
     return false;//exit function
  }
- console.log(number)
+ console.log(number);
  if ((number < min) || (number > max)) {
    alert('Please enter a number between ' + min + ' and ' + max + '.');
    return false;
@@ -82,7 +82,6 @@ function gameTest() {
     currentMax.innerText = max;
     currentMin.innerText = min;
     answer = generateRandom();
-    newGameButton.disabled = true;
     alert('Congratulations, you win!!!!');
   }
 }
@@ -129,6 +128,10 @@ clearButton.addEventListener('click', function(){
 // run new game when button is clicked
 newGameButton.addEventListener('click', function(){
   clearInput();
+  min = 0;
+  max = 100;
+  currentMax.innerText = max;
+  currentMin.innerText = min;
   answer = generateRandom();
   lastGuess.innerText = '___';
   h3.innerText = 'Make a guess!';
